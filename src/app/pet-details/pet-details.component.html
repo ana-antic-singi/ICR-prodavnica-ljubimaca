@@ -1,0 +1,10 @@
+<div class="pet-details">
+    <h2>{{ data.pet.name }}</h2>
+    <p><strong>Age:</strong> {{ data.pet.age }}</p>
+    <p><strong>Type:</strong> {{ data.pet.type }}</p>
+    <p><strong>Size:</strong> {{ data.pet.size }}</p>
+    <img *ngIf="data.pet.imageUrl" [src]="data.pet.imageUrl" alt="{{ data.pet.name }}" />
+  
+    <button (click)="close()">Close</button>
+  </div>
+  

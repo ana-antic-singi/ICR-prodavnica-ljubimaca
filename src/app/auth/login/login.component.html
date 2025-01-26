@@ -1,0 +1,51 @@
+<section class="login-section">
+    <div class="login-container">
+    <h2 class="login-title">Log in</h2>
+    <form 
+        class="login-form"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="1rem"
+        #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
+    >
+        <!-- Email -->
+        <mat-form-field appearance="outline">
+            <input 
+                type="email" 
+                matInput 
+                placeholder="Your email" 
+                name="email" 
+                ngModel 
+                required 
+                #emailInput="ngModel"
+            >
+            <!-- email greska -->
+            <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        <!-- Password  -->
+        <mat-form-field appearance="outline">
+            <input 
+                type="password" 
+                matInput 
+                placeholder="Your password" 
+                name="password" 
+                ngModel 
+                required 
+                #passInput="ngModel" 
+                minlength="8"
+            >
+            <mat-hint text-align="end">{{ passInput.value?.length }} / 8</mat-hint>
+        </mat-form-field>
+
+
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+    <p class="signup-link">
+        Don't have an account? <a routerLink="/signup">Signup</a>
+    </p>
+</div>
+
+</section>
+

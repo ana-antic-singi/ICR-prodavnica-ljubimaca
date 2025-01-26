@@ -1,0 +1,65 @@
+<section class="signup-section">
+    <div class="signup-container">
+        <h2 class="signup-title">Sign up</h2>
+    <form 
+        class="signup-form"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5rem"
+        #f="ngForm"
+        (ngSubmit)="onSubmit(f)"
+    >
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="form-field">
+            <input 
+                type="email" 
+                matInput 
+                placeholder="Your email" 
+                name="email" 
+                ngModel 
+                required 
+                #emailInput="ngModel"
+            >
+            <!-- email greska -->
+            <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+         <!-- Card Number -->
+         <mat-form-field appearance="outline" class="form-field">
+            <input 
+                type="text" 
+                matInput 
+                placeholder="Your card number" 
+                name="cardNumber" 
+                ngModel 
+                required 
+                #cardNumberInput="ngModel"
+            >
+            <mat-error *ngIf="cardNumberInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>   
+
+        <!-- Password  -->
+        <mat-form-field appearance="outline" class="form-field">
+            <input 
+                type="password" 
+                matInput 
+                placeholder="Your password" 
+                name="password" 
+                ngModel 
+                required 
+                #passInput="ngModel" 
+                minlength="8"
+            >
+            <!-- pass hint -->
+            <mat-hint text-align="end">{{ passInput.value?.length }} / 8</mat-hint>
+        </mat-form-field>
+
+        <!-- Submit Button -->
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+    
+    <p class="signup-link">
+        Already have an account? <a routerLink="/login">Login</a>
+    </p>
+    </div>
+</section>

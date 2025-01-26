@@ -1,0 +1,55 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: ask about pets
+  steps:
+  - intent: ask_about_pets
+  - action: utter_about_pets
+
+- story: ask about price
+  steps:
+  - intent: ask_price
+  - action: utter_price_info
+
+- story: use filters
+  steps:
+  - intent: use_filters
+  - action: utter_filter_info
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye

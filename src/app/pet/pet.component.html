@@ -1,0 +1,79 @@
+<!--PRETRAGA-->
+<!-- <div fxLayoutAlign="center center">
+  <mat-form-field>
+    <input matInput type="text" (keyup)="search($any($event.target).value)" placeholder="Search">
+  </mat-form-field>
+</div> -->
+
+
+<div fxLayout="row" fxLayoutAlign="space-between center" class="control-bar" >
+  <div fxLayout="row" fxFlex="80">
+
+    <!--PRETRAGA-->
+    <mat-form-field width="200px" >
+      <input matInput type="text" (keyup)="search($any($event.target).value)" placeholder="Search">
+    </mat-form-field>
+
+    <!--SORTIRANJE PO CENI-->
+    <mat-form-field appearance="fill" class="fixed-width">
+      <mat-select placeholder="Price" (selectionChange)="sortData($event.value)" #sortSelect>
+        <mat-select-trigger>
+          <ng-container *ngIf="sortSelect.value === 'asc'">
+            Price &#8593; <!--strelica gore-->
+          </ng-container>
+          <ng-container *ngIf="sortSelect.value === 'desc'">
+            Price &#8595; <!--strelica dole-->
+          </ng-container>
+          <ng-container *ngIf="!sortSelect.value">
+            Sort by Price
+          </ng-container>
+        </mat-select-trigger>
+        <mat-option value="asc">Low to High</mat-option>
+        <mat-option value="desc">High to Low</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!--SORTIRANJE PO TIPU-->
+    <mat-form-field appearance="fill" class="fixed-width">
+      <mat-select placeholder="Type" (selectionChange)="filterByType($event.value)" #typeSelect>
+        <mat-option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    
+    <div fxFlex="40" class="sort-chip-container" *ngIf="activeTypeFilter || activeSort">
+      <mat-chip-listbox>
+        <mat-chip *ngIf="activeSort" color="primary" selected (removed)="clearSort(sortSelect)">
+          {{ activeSortText }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <mat-chip *ngIf="activeTypeFilter" color="primary" selected (removed)="clearTypeFilter(typeSelect)">
+          Filtered by Type: {{ activeTypeFilter }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container">
+
+    <div *ngFor="let pet of petSource.connect() | async">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{pet.name}}</mat-card-title>
+          <!-- <mat-card-subtitle>{{pet.type}}</mat-card-subtitle> -->
+        </mat-card-header>
+        <img mat-card-image [src]="pet.imageUrl" [alt]="">
+        <mat-card-content>
+          <p>Price: {{pet.price}} <mat-icon style="font-size: 20px;vertical-align: middle;">pets</mat-icon>  </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="addToCart(pet)">Add to Cart</button>
+          <button mat-button (click)="openDetails(pet)">Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

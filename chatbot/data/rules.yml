@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: Greet the user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Provide price information
+  steps:
+  - intent: ask_price
+  - action: utter_price_info
+
+- rule: Provide information about pets
+  steps:
+  - intent: ask_about_pets
+  - action: utter_about_pets
+
+- rule: Explain filters and search
+  steps:
+  - intent: use_filters
+  - action: utter_filter_info

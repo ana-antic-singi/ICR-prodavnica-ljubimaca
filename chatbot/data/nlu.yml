@@ -1,0 +1,185 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi bot
+    - what's up
+    - greetings
+    - howdy
+    - yo
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - talk to you soon
+    - see you next time
+    - see you
+    - later
+    - catch you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - sure
+    - absolutely
+    - okay
+    - right
+    - that's right
+    - totally
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - not at all
+    - that's not right
+    - I disagree
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - awesome
+    - fantastic
+    - fabulous
+    - excellent
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+    - I'm upset
+    - I feel terrible
+    - I am feeling down
+    - bad day
+    - not feeling great
+    - not in the mood
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you an AI?
+    - you're not human, right?
+    - are you a machine?
+    - are you programmed?
+
+- intent: ask_price
+  examples: |
+    - How much does a dog cost?
+    - Tell me the price of a cat
+    - How expensive are your pets?
+    - What’s the cost of a pet?
+    - dog price please
+    - cat price please
+    - What does a rabbit cost?
+    - Price of a ferret
+    - How much is a turtle?
+    - bird cost
+    - Can you tell me how much pets are?
+    - What are the prices of dogs and cats?
+    - What's the cheapest pet?
+    - Is a bird expensive?
+    - How much for a rabbit?
+    - What's the price range for pets?
+
+- intent: ask_about_pets
+  examples: |
+    - What pets do you have?
+    - Tell me about your pets
+    - Do you have any animals available?
+    - What animals can I adopt?
+    - Do you sell dogs or cats?
+    - Do you sell rabbits or turtles?
+    - What about ferrets and birds?
+    - What kinds of animals are in the shop?
+    - What types of pets are there?
+    - Can I see all the pets?
+    - Do you have small pets?
+    - Do you have reptiles or birds?
+    - What pets are available today?
+    - Can I adopt a dog or cat here?
+    - What pets are for sale?
+
+- intent: use_filters
+  examples: |
+    - How can I find a dog?
+    - Filter out cats for me
+    - Go filter out dogs
+    - Show me rabbits
+    - Search for turtles
+    - I want to see birds
+    - Can I filter for small pets?
+    - How do I use the search bar?
+    - How can I narrow my search for dogs?
+    - I want to filter pets by price
+    - Can I search for pets by type?
+    - Is there a filter for small pets?
+    - Can I sort by cost?
+    - Show me turtles only
+    - Search for cats please
+    - Find me a ferret
+    - How do I look for rabbits specifically?
+    - Can I search for birds or turtles?

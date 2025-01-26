@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Checkout</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="data.totalPrice > 0; else emptyCart">
+    <div *ngFor="let item of data.cartItems">
+      <p>{{item.pet.name}} - {{item.pet.price}} RSD ({{item.count}})</p>
+    </div>
+    <div class="total-price">
+      <h3>Total: {{ data.totalPrice }} RSD</h3>
+    </div>
+    <p>Are you sure you want to proceed to checkout?</p>
+  </ng-container>
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+</div>
+<div mat-dialog-actions *ngIf="data.totalPrice > 0">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onConfirm()">Confirm</button>
+</div>

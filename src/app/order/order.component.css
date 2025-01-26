@@ -1,0 +1,37 @@
+.order-container {
+    padding: 12px;
+    margin-top:20px;
+    background-color: #d4e6f1;
+    border-radius: 6px;
+    border: #2980b9;
+    max-width: 800px; 
+    margin: auto;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding: 6px;
+    border-bottom: 1px solid #bbb; 
+  }
+  
+  .order-item p {
+    margin: 0;
+  }
+  
+  button {
+    background-color: white;
+    color: #2980b9; 
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .total-price {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  

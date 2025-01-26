@@ -1,0 +1,13 @@
+<div class="cart-container">
+    <h2>Cart</h2>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <p>{{item.pet.name}} - {{item.pet.price}} RSD ({{item.count}})</p>
+      <button mat-button (click)="removeFromCart(item.pet)">Remove</button>
+    </div>
+    <div class="total-price">
+      <h3>Total: {{ getTotalPrice(cartItems) }} RSD</h3>
+    </div>
+    <button mat-raised-button (click)="openCheckoutDialog()">Checkout</button>
+</div>
+
+  <app-order></app-order>
